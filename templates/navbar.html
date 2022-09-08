@@ -1,0 +1,16 @@
+<div class="navbar">
+
+    <div class="navbar__logo logo">
+        <a href="/" class="logo__link">
+            MyAPP
+        </a>
+    </div>
+    <div class="navbar__search search">
+        <form method="get" action="{% url 'home' %}" class="search__form">
+            <input type="text" name="q" placeholder="Search Rooms..." autocomplete="off" class="search__input">
+        </form>
+    </div>
+    <div class="navbar__login">
+        <a href="{% url 'login' %}" class="button">Login</a>
+    </div>
+</div>
