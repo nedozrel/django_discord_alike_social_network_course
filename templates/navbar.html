@@ -10,7 +10,15 @@
             <input type="text" name="q" placeholder="Search Rooms..." autocomplete="off" class="search__input">
         </form>
     </div>
-    <div class="navbar__login">
-        <a href="{% url 'login' %}" class="button">Login</a>
-    </div>
+
+    {% if request.user.is_authenticated %}
+        <div class="navbar__logout">
+            <a href="{% url 'logout' %}" class="button">Logout</a>
+        </div>
+    {% else %}
+        <div class="navbar__login">
+            <a href="{% url 'login' %}" class="button">Login</a>
+        </div>
+    {% endif %}
+
 </div>

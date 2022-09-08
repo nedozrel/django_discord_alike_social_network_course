@@ -250,6 +250,9 @@ h1, h2, h3, h4, h5, h6 {
 .button_close {
   background: none;
 }
+.button_big {
+  padding: 10px;
+}
 
 .room-name__text {
   color: black;
@@ -307,4 +310,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 .messages .error {
   background-color: #f3d6d6;
+}
+
+.login_page {
+  padding: 0 20px;
+}
+.login_page__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.login_page__label {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+.login_page__input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  margin: 0 0 20px 0;
+}
+.login_page__submit-button {
+  font-size: 16px;
 }

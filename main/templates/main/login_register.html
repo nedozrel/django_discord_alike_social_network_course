@@ -3,13 +3,13 @@
 {% block content %}
 
     <div class="login_page">
-        <form method="post" action="">
+        <form method="post" action="" class="login_page__form">
             {% csrf_token %}
-            <label>Username</label>
-            <input type="text" name="usernave" placeholder="Enter Username">
-            <label>Password</label>
-            <input type="text" name="password" placeholder="Enter Password">
-            <input type="submit" value="Login">
+            <label class="login_page__label">Username</label>
+            <input type="text" name="username" placeholder="Enter Username" class="login_page__input">
+            <label class="login_page__label">Password</label>
+            <input type="text" name="password" placeholder="Enter Password" class="login_page__input">
+            <input type="submit" value="Login" class="login_page__submit-button button button_big">
         </form>
     </div>
 
