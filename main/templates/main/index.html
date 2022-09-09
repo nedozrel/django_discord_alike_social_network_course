@@ -44,14 +44,16 @@
                         <div class="room">
                             <div class="room__top">
                                 <div class="room__username">@{{ room.host.username }}</div>
-                                <div class="room__buttons">
-                                    <div class="room__button button">
-                                        <a href="{% url 'update-room' room.id %}" class="button__link">Edit</a>
+                                {% if request.user == room.host %}
+                                    <div class="room__buttons">
+                                        <div class="room__button button">
+                                            <a href="{% url 'update-room' room.id %}" class="button__link">Edit</a>
+                                        </div>
+                                        <div class="room__button button button_red">
+                                            <a href="{% url 'delete-room' room.id %}" class="button__link">Delete</a>
+                                        </div>
                                     </div>
-                                    <div class="room__button button button_red">
-                                        <a href="{% url 'delete-room' room.id %}" class="button__link">Delete</a>
-                                    </div>
-                                </div>
+                                {% endif %}
                             </div>
                             <div class="room__name room-name">
                                 <a href="{% url 'room' room.id %}" class="room-name__text">{{ room.name }}</a>
@@ -67,4 +69,8 @@
     </div>
 
 
+{% endblock %}
+
+{% block head %}
+    <title>Privet</title>
 {% endblock %}

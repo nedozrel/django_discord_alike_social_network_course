@@ -10,6 +10,10 @@ from .forms import RoomForm
 
 
 def login_page(request):
+
+	if request.user.is_authenticated:
+		return redirect('home')
+
 	if request.method == 'POST':
 		username = request.POST.get('username')
 		password = request.POST.get('password')
@@ -80,8 +84,8 @@ def update_room(request, pk):
 	room = Room.objects.get(id=pk)
 	form = RoomForm(instance=room)
 
-	if request.user != room.user:
-		pass
+	if request.user != room.host:
+		return HttpResponse('Your are not allowed here')
 
 	if request.method == 'POST':
 		form = RoomForm(request.POST, instance=room)
