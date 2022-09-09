@@ -1,0 +1,16 @@
+.delete-page {
+  padding: 0 20px;
+}
+
+.delete-form {
+  &__text {
+    font-size: 22px;
+    margin: 0 0 20px 0;
+  }
+
+  &__button {
+    display: inline-block;
+    color: black;
+    padding: 10px;
+  }
+}

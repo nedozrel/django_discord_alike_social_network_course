@@ -1,0 +1,28 @@
+.navbar {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    flex: 1 1 auto;
+    font-size: 20px;
+  }
+
+  &__search {
+    margin: 0 10px 0 0;
+  }
+}
+
+.logo {
+  &__link {
+    display: inline-block;
+    color: black;
+  }
+}
+
+.search {
+  &__input {
+    border: 1px solid black;
+    padding: 5px;
+  }
+}

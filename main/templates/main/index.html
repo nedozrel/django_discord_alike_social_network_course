@@ -2,75 +2,72 @@
 
 {% block content %}
 
+    <div class="body">
+        <div class="home-container">
 
-    <div class="home-container">
-
-        <div class="sidebar">
-            <div class="sidebar__tittle">Browse Topics</div>
-            <div class="sidebar__topic">
-                <a href="{% url 'home' %}">All</a>
-            </div>
-            {% for topic in topics %}
+            <div class="sidebar">
+                <div class="sidebar__tittle">Browse Topics</div>
                 <div class="sidebar__topic">
-                    <a href="{% url 'home' %}?q={{ topic.name }}">{{ topic.name }}</a>
+                    <a href="{% url 'home' %}">All</a>
                 </div>
-            {% endfor %}
-        </div>
-
-        <div class="content">
-            <div class="content-top">
-                <div class="content-top__link">
-                    <a href="{% url 'create-room' %}">Create room</a>
-                </div>
-                {% if is_searching %}
-                    <div class="content-top__search-results">
-                        {% if room_count > 1 %}
-                            {{ room_count }} results found
-                        {% elif room_count == 1 %}
-                            {{ room_count }} result found
-                        {% endif %}
+                {% for topic in topics %}
+                    <div class="sidebar__topic">
+                        <a href="{% url 'home' %}?q={{ topic.name }}">{{ topic.name }}</a>
                     </div>
-                {% endif %}
+                {% endfor %}
             </div>
 
-            <div class="content-body">
-                {% if is_searching and room_count == 0 %}
-                    <div class="content-body__nothing-found">
-                        Nothing found :(
+            <div class="content">
+                <div class="content-top">
+                    <div class="content-top__link">
+                        <a href="{% url 'create-room' %}">Create room</a>
                     </div>
-                {% endif %}
-                <div class="content-body__rooms rooms">
-                    {% for room in rooms %}
-                        <div class="room">
-                            <div class="room__top">
-                                <div class="room__username">@{{ room.host.username }}</div>
-                                {% if request.user == room.host %}
-                                    <div class="room__buttons">
-                                        <div class="room__button button">
-                                            <a href="{% url 'update-room' room.id %}" class="button__link">Edit</a>
-                                        </div>
-                                        <div class="room__button button button_red">
-                                            <a href="{% url 'delete-room' room.id %}" class="button__link">Delete</a>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            </div>
-                            <div class="room__name room-name">
-                                <a href="{% url 'room' room.id %}" class="room-name__text">{{ room.name }}</a>
-                            </div>
-                            <div class="room__topic">
-                                {{ room.topic.name }}
-                            </div>
+                    {% if is_searching %}
+                        <div class="content-top__search-results">
+                            {% if room_count > 1 %}
+                                {{ room_count }} results found
+                            {% elif room_count == 1 %}
+                                {{ room_count }} result found
+                            {% endif %}
                         </div>
-                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="content-body">
+                    {% if is_searching and room_count == 0 %}
+                        <div class="content-body__nothing-found">
+                            Nothing found :(
+                        </div>
+                    {% endif %}
+                    <div class="content-body__rooms rooms">
+                        {% for room in rooms %}
+                            <div class="room">
+                                <div class="room__top">
+                                    <div class="room__username">@{{ room.host.username }}</div>
+                                    {% if request.user == room.host %}
+                                        <div class="room__buttons">
+                                            <div class="room__button button">
+                                                <a href="{% url 'update-room' room.id %}" class="button__link">Edit</a>
+                                            </div>
+                                            <div class="room__button button button_red">
+                                                <a href="{% url 'delete-room' room.id %}"
+                                                   class="button__link">Delete</a>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="room__name room-name">
+                                    <a href="{% url 'room' room.id %}" class="room-name__text">{{ room.name }}</a>
+                                </div>
+                                <div class="room__topic">
+                                    {{ room.topic.name }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-{% endblock %}
-
-{% block head %}
-    <title>Privet</title>
 {% endblock %}

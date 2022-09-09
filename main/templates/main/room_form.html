@@ -1,12 +1,13 @@
 {% extends 'main.html' %}
 
 {% block content  %}
-
-    <div class="edit-room-container">
-        <form method="post" action="">
-            {% csrf_token %}
-            {{ form.as_div }}
-            <input type="submit" value="Submit">
-        </form>
+    <div class="body">
+        <div class="edit-room-container">
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 {% endblock %}

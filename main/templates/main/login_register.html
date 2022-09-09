@@ -2,15 +2,16 @@
 
 {% block content %}
 
-    <div class="login_page">
-        <form method="post" action="" class="login_page__form">
-            {% csrf_token %}
-            <label class="login_page__label">Username</label>
-            <input type="text" name="username" placeholder="Enter Username" class="login_page__input">
-            <label class="login_page__label">Password</label>
-            <input type="password" name="password" placeholder="Enter Password" class="login_page__input">
-            <input type="submit" value="Login" class="login_page__submit-button button button_big">
-        </form>
+    <div class="body">
+        <div class="login-form">
+            <form method="post" action="" class="login-form__form">
+                {% csrf_token %}
+                <label class="login-form__label">Username</label>
+                <input type="text" name="username" placeholder="Enter Username" class="login-form__input">
+                <label class="login-form__label">Password</label>
+                <input type="password" name="password" placeholder="Enter Password" class="login-form__input">
+                <input type="submit" value="Login" class="login_page__submit-button button button_big">
+            </form>
+        </div>
     </div>
-
 {% endblock %}

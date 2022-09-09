@@ -1,0 +1,103 @@
+.home-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 10px;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 12, 33, 0.24);
+
+  &__tittle {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+  }
+
+  &__topic {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+.content-top {
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: flex-end;
+
+  &__link {
+    display: inline-block;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 12, 33, 0.24);
+  }
+
+  &__search-results {
+    flex: 1 1 auto;
+    text-align: end;
+  }
+}
+
+.content-body {
+  &__rooms {
+  }
+
+  &__nothing-found {
+    font-size: 22px;
+    color: #a1a1a1;
+  }
+}
+
+.rooms {
+  width: 100%;
+}
+
+.room {
+  margin: 0 0 10px 0;
+  box-shadow: 0 0 10px rgba(0, 12, 33, 0.24);
+  padding: 10px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &__top {
+    display: flex;
+    margin: 0 0 5px 0;
+  }
+
+  &__username {
+    flex: 1 1 auto;
+    font-size: 12px;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    margin: 0 10px 0 0;
+    width: 50px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    color: black;
+  }
+
+  &__topic {
+    text-align: end;
+    font-size: 12px;
+  }
+}

@@ -1,16 +1,16 @@
 {% extends 'main.html' %}
 
 {% block content %}
-
-    <div class="delete-page">
-        <div class="delete-form">
-            <form method="post" action="">
-                {% csrf_token %}
-                <div class="delete-form__text">Are you sure you want to delete "{{ obj }}"?</div>
-                <a href="{{ request.META.HTTP_REFERER }}" class="delete-form__button button">Go Back</a>
-                <input type="submit" value="Confirm" class="delete-form__button button button_red">
-            </form>
+    <div class="body">
+        <div class="delete-page">
+            <div class="delete-form">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="delete-form__text">Are you sure you want to delete "{{ obj }}"?</div>
+                    <a href="{{ request.META.HTTP_REFERER }}" class="delete-form__button button">Go Back</a>
+                    <input type="submit" value="Confirm" class="delete-form__button button button_red">
+                </form>
+            </div>
         </div>
     </div>
-
 {% endblock %}
